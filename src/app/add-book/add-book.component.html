@@ -1,0 +1,22 @@
+<form #addBookForm="ngForm">
+    <h1 class="display-4">Add Book</h1>
+    <div class="form-group">
+      <label class="lead" for="book_name">Book Name</label>
+      <input [(ngModel)]="addForm.name" type="text" class="form-control lead" id="book_name" aria-describedby="book_name" placeholder="Name of book" name="name">
+      <small id="book_name" class="form-text text-muted">From model, you inputed: {{addForm.name}}</small>
+    </div>
+    <div class="form-group">
+      <label class="lead" for="book_author">Author</label>
+      <input [(ngModel)]="addForm.author" type="test" class="form-control lead" id="book_author" placeholder="Author name" name="author">
+      <small id="book_author" class="form-text text-muted">From model, you inputed: {{addForm.author}}</small>
+    </div>
+    <div class="form-group">
+      <label class="lead" for="book_year_released">Year Released</label>
+      <input [(ngModel)]="addForm.year_released" type="text" class="form-control lead" id="book_year_released" placeholder="Year of release" name="year_released">
+      <small id="book_year_released" class="form-text text-muted">From model, you inputed: {{addForm.year_released}}</small>
+    </div>
+    <div class="btn-toolbar">
+        <button (click)="addBook()" type="button" class="btn btn-primary">Add</button>
+        <button (click)="clearForm()" type="button" class="btn btn-secondary">Clear</button>
+    </div>
+  </form>

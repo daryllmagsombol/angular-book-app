@@ -1,0 +1,30 @@
+<form #editBookForm="ngForm">
+    <h1 class="display-4">Edit Book</h1>
+    <div class="form-group">
+      <label class="lead" for="selected_book">Selected Book</label>
+      <select [(ngModel)]="selected_book" class="form-control" id="selected_book" name="selected_book" (change)="selectBook(selected_book)">
+        <option value="none">--- Select book ---</option>
+        <option *ngFor="let book of books" value={{book.id}}>{{book.name}}</option>
+      </select>
+      <small id="book_name" class="form-text text-muted">From model, you inputed: {{'book_id ->' + selected_book}}</small>
+    </div>
+    <div class="form-group">
+      <label class="lead" for="book_name">Book Name</label>
+      <input [(ngModel)]="editForm.name" type="text" class="form-control lead" id="book_name" aria-describedby="book_name" placeholder="Name of book" name="name">
+      <small id="book_name" class="form-text text-muted">From model, you inputed: {{editForm.name}}</small>
+    </div>
+    <div class="form-group">
+      <label class="lead" for="book_author">Author</label>
+      <input [(ngModel)]="editForm.author" type="test" class="form-control lead" id="book_author" placeholder="Author name" name="author">
+      <small id="book_author" class="form-text text-muted">From model, you inputed: {{editForm.author}}</small>
+    </div>
+    <div class="form-group">
+      <label class="lead" for="book_year_released">Year Released</label>
+      <input [(ngModel)]="editForm.year_released" type="text" class="form-control lead" id="book_year_released" placeholder="Year of release" name="year_released">
+      <small id="book_year_released" class="form-text text-muted">From model, you inputed: {{editForm.year_released}}</small>
+    </div>
+    <div class="btn-toolbar">
+        <button (click)="editBook()" type="button" class="btn btn-primary">Edit</button>
+        <button (click)="clearForm()" type="button" class="btn btn-secondary">Clear</button>
+    </div>
+  </form>
